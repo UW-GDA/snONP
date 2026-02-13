@@ -25,3 +25,17 @@ We will use reflectance data from SENTINEL-2 to determine snow cover. We may use
 **Expected Outcomes:** There will be less drinking water resources available during summer months and over years with drought conditions. We expect that a high snow pack will be correlated to higher streamflows. 
 
 **References:** Included some links in our dataset section, more references to come as we work on our project.
+Snow cover examples to reference:  https://nbviewer.org/github/egagli/easysnowdata/blob/main/docs/examples/remote_sensing_examples.ipynb
+Trail Vector Data (openstreetmap and osmnx):  https://github.com/gboeing/osmnx
+USGS Gauges: https://waterdata.usgs.gov/state/washington/ 
+(Coding Examples): https://github.com/SnowEx/spicy-snow/blob/main/notebooks/tutorial/04analysis.ipynb
+    Some Options we can look at linking to glaciers across the park: 
+    - Elwha River at Mcdonald BR Near Port Angeles, WA - USGS-12045500
+    - Bogachiel River Near Forks, WA - USGS-12042800
+    - Hoh River at US Highway 101 Near Forks, WA - USGS-12041200
+    - Queets River Near Clearwater, WA - USGS-12040500
+    - Quinault River at Quinault Lake, WA - USGS-12039500
+    - NF Skokomish R BL Staircase Rpds NR Hoodsport, WA - USGS-12056500
+    - Duckabush River Near Brinnon, WA - USGS-12054000
+    - Dungeness River Near Sequim, WA - USGS-12048000
+Comments: Can use the stream gauge data to identify "low flow" periods. E.g.: when flow is below some percent of the yearly average, it's low-flow. Then look for remaining snow during those periods.
