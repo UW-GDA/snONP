@@ -9,16 +9,16 @@ Backcountry drinking water monitoring for Olympic National Park
 
 **Objective:** Determine availability of snow as a drinking water resource for backcountry recreators in Olympic National Park. Relate snow pack to streamflows to determine periods when snow is a critical resource and its impact on downstream flows.
 
-**Datasets:** ArcGIS trail maps will indicate key areas for backcountry recreation and we will look at snow data in close proximity to these trails. We will look into using Open Street Maps as an alternative, since it may be simpler to obtain trail locations from.
+**Datasets:** Open Street Maps trail maps will indicate key areas for backcountry recreation and we will look at snow data in close proximity to these trails. We will look into using Open Street Maps as an alternative, since it may be simpler to obtain trail locations from.
 
 We will use reflectance data from SENTINEL-2 to determine snow cover. We may use LANDSAT-8 to determine snow extent using NDSI. If we decide that we need a higher temporal resolution and are willing to reduce our spatial resolution, we will use MODIS for our snowcover data.
 
+PUT CORRECT DATA SOURCES
 - Trail and River Map: https://www.arcgis.com/apps/mapviewer/index.html?webmap=dfca225b740d4ce18228a3314d87d42a
 - Additional Trail and Vegetation Map: https://www.arcgis.com/apps/mapviewer/index.html?webmap=e8b07d9cf0d04268bcdb9129cdc7e088
-- Marmot Habitat Map: https://www.usgs.gov/data/olympic-marmot-marmota-olympus-molmaxconus2001v1-habitat-map
 - Streamflow Gauge Data: https://waterdata.usgs.gov/state/washington/
 
-**Tools/Packages Used:** Geopandas, rasterio, rioxarray, numpy, pandas, matplotlib, + more probably!
+**Tools/Packages Used:** Geopandas, rasterio, rioxarray, numpy, pandas, matplotlib, pyproj, osmnx, contextily, dataretrieval.nwis, requests, easysnowdata, shapely, pystac_client, planetary computer, odc.stac, datetime
 
 **Planned Approach:** We will be looking at streamflow gauge time series from USGS to identify periods where snow will be the primary water resource. For those identified periods, we will use snow cover data from one of the potential satellite sources listed above to determine snow cover extent in areas surrounding key trails and streams in Olympic National Park. We will compare the extent of snow cover to downstream flows to determine the relationship between these two variables. We will look for trends in that relationship so that we can come to a conclusion on how they are related. To investigate snow as a potential drinking water resource, we will look at those periods where snow is the primary water resource and see if there is enough snow to support recreation activity. We may use trail report images or images from the National Park Service to look at snow quality, just from a simple visual inspection, to see if it should be consumed (TBD).
 
