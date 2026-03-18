@@ -27,8 +27,8 @@ DATA SOURCES
 - SENTINEL -2 Level 2A Data: https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a
 - Randolph Glacier Inventory for the Western U.S. and Canada: https://daacdata.apps.nsidc.org/pub/DATASETS/nsidc0770_rgi_v7/regional_files/RGI2000-v7.0-C/
 - Streamflow Gauge Data: https://waterdata.usgs.gov/state/washington/
-- National Rivers Inventory River System Geometry: 
-- OpenStreetMap ONP Boundary and Trail Network Geometries: 
+- National Rivers Inventory River System Geometry: https://public-nps.opendata.arcgis.com/datasets/105a104d5a3043b0ba2a25e31ecf3ff1_0/explore?location=47.743154%2C-123.424931%2C10
+- OpenStreetMap ONP Boundary and Trail Network Geometries: https://openstreetmap.us/
 - Washington State Dept. of Ecology Watershed Boundary ArcGIS Geometry: https://hub.arcgis.com/datasets/24c59727ba614c4aabe41f168ec3f586_11/explore?location=47.837590%2C-123.471642%2C9
 
 **Tools/Packages Used:** Geopandas, rasterio, rioxarray, numpy, pandas, matplotlib, pyproj, osmnx, contextily, dataretrieval.nwis, requests, easysnowdata, shapely, pystac_client, planetary computer, odc.stac, datetime
@@ -43,18 +43,11 @@ From our watershed analysis, while it was difficult to determine direct contribu
 
 When examing snow extent within 500m or the trail network, we found that for 2022 in July-Aug, 7.13km2 of snow existed within this buffer, indicating a chance for accessiblity, while in 2023 this was reduced to only 1.76km2, showing the impact on yearly snow extent on reasonable backcountry water availability. 
 
-**References:** Included some links in our dataset section, more references to come as we work on our project.
-Snow cover examples to reference:  https://nbviewer.org/github/egagli/easysnowdata/blob/main/docs/examples/remote_sensing_examples.ipynb
-Trail Vector Data (openstreetmap and osmnx):  https://github.com/gboeing/osmnx
-USGS Gauges: https://waterdata.usgs.gov/state/washington/ 
-(Coding Examples): https://github.com/SnowEx/spicy-snow/blob/main/notebooks/tutorial/04analysis.ipynb
-Some Options we can look at linking to glaciers across the park: 
-- Elwha River at Mcdonald BR Near Port Angeles, WA - USGS-12045500
-- Bogachiel River Near Forks, WA - USGS-12042800
-- Hoh River at US Highway 101 Near Forks, WA - USGS-12041200
-- Queets River Near Clearwater, WA - USGS-12040500
-- Quinault River at Quinault Lake, WA - USGS-12039500
-- NF Skokomish R BL Staircase Rpds NR Hoodsport, WA - USGS-12056500
-- Duckabush River Near Brinnon, WA - USGS-12054000
-- Dungeness River Near Sequim, WA - USGS-12048000
-Comments: Can use the stream gauge data to identify "low flow" periods. E.g.: when flow is below some percent of the yearly average, it's low-flow. Then look for remaining snow during those periods.
+**References:** Includes dataset formatted references.
+- Microsoft Planetary Computer. Planetary Computer. (n.d.). https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a 
+- RGI 7.0 Consortium, 2023. Randolph Glacier Inventory - A Dataset of Global Glacier Outlines, Version 7.0. Boulder, Colorado USA. NSIDC: National Snow and Ice Data Center. doi:10.5067/f6jmovy5navz. Online access: https://doi.org/10.5067/f6jmovy5navz
+- Washington Water Conditions. Washington water conditions - USGS Water Data for the Nation. (n.d.). https://waterdata.usgs.gov/state/washington/ 
+- Nationwide rivers inventory official. National Park Service. (n.d.). https://public-nps.opendata.arcgis.com/datasets/105a104d5a3043b0ba2a25e31ecf3ff1_0/explore?location=47.743154%2C-123.424931%2C10  
+- OpenStreetMap US. (n.d.). https://openstreetmap.us/ 
+- National Watershed Boundary Dataset (WBD): Hydrologic unit code 10-digit basins of Washington State. ArcGIS Hub. (n.d.). https://hub.arcgis.com/datasets/waecy::national-watershed-boundary-dataset-wbd-hydrologic-unit-code-10-digit-basins-of-washington-state/about 
+- Gagliano, E. (2025). easysnowdata (Version v0.0.15) [Computer software]. https://github.com/egagli/easysnowdata 
