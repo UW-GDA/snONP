@@ -11,7 +11,20 @@ Snow as a source of backcountry and downstream drinking water in Olympic Nationa
 
 **Objective:** Determine availability of snow as a drinking water resource for backcountry recreators in Olympic National Park. Relate snow pack to streamflows to determine periods when snow is a critical resource and its impact on downstream flows.
 
-**Datasets:** Reflectance data from SENTINEL-2 was pulled from Microsoft Planetary Computer to determine and image snow cover extent.
+**Repository Folder Structure:**
+- analysis_notebooks: contains key notebooks with code used in our analysis and figures used for data interpretation and presentation. All notebooks have brief descriptions at the top of the notebook.
+    - data folder: contains downloaded external data that was unable to be pulled using APIs
+    - watershed_and_trail_analysis.ipynb: Contains per watershed analysis of snow extent, correlation values between watershed snow extent and streamflow, and figure for snow extent within a buffered trail map.
+    - streamflow_plots.ipynb: Contains data and figure used to identify water years of interest from streamflow data.
+    - snotel_plotting.ipynb: Used to generate snow level statistics plot from SNOTEL station data.
+    - composites_wy_snow.ipynb: Contains figures of composite imagery for our period and region of interest.
+    - change_in_snow_22_23.ipynb: Contains figures showing snow extent changes between our high and low water years with considerations for glacial extent.
+- cache: cache
+- code_testing: contains notebooks with code trials that were copied into analysis notebooks. This folder need not be reviewed, as all relevant code is used in the notebooks in the analysis_notebooks folder
+
+**Datasets:** 
+
+Reflectance data from SENTINEL-2 was pulled from Microsoft Planetary Computer to determine and image snow cover extent.
 
 Glacier outlines from the Randolph Glacier Inventory were used to isolate areas of seasonal snow which fluctuates greatly on the seasonal scale, and determines much of the melt-off water contributions.
 
@@ -37,11 +50,28 @@ DATA SOURCES
 
 **Expected Outcomes:** There will be less drinking water resources available during summer months and over years with drought conditions. We expect that a high snow pack will be correlated to higher streamflows.
 
-**Results** Snow extent varied the greatest outside of drawn glacier boundaries, but this did not account for the full snow extent area calculated, indicating some losses of glacier area as well between our high and low streamflow years. From 2022-2023, total snow area loss was around 56.95km2, while snow outside of glaciers contributed to 47.78km2 of the whole area. This could be overstimated glacier area loss due to pixel resolution where pixels existing on the border of glacier boundaries count as snow present pixels for both masks. 
+**Results:** Snow extent varied the greatest outside of drawn glacier boundaries, but this did not account for the full snow extent area calculated, indicating some losses of glacier area as well between our high and low streamflow years. From 2022-2023, total snow area loss was around 56.95km2, while snow outside of glaciers contributed to 47.78km2 of the whole area. This could be overstimated glacier area loss due to pixel resolution where pixels existing on the border of glacier boundaries count as snow present pixels for both masks. 
 
 From our watershed analysis, while it was difficult to determine direct contribution of snow melt to streamflow at the USGS stations, we were able to visualize snow extent for each year, and correlated those values to their respective streamflows. For the Hoh River, which had snow extents of 21.59km2 (2022) at its lowest and 35.37km2 (2023) at it highest, correlation with the mean flow over our period of interest was 0.9477, while in the Elwha, with its lowest snow extent at 5.24km2, and 17.9km2 at its highest, correlation was 0.9186. These suggest that the snow present during the summer season does have a significant impact on streamflows during this time, and is worth noting that where we had greater areas of snow extent in the Hoh watershed, correlation values were  slightly higher, indicating particular watershed's relationships with snow upstream snow area. 
 
 When examing snow extent within 500m or the trail network, we found that for 2022 in July-Aug, 7.13km2 of snow existed within this buffer, indicating a chance for accessiblity, while in 2023 this was reduced to only 1.76km2, showing the impact on yearly snow extent on reasonable backcountry water availability. 
+
+**Limitations:**
+- Conclusions reached from qualitative connections
+- Spurious correlation between mean annual discharge and snow extent
+- Sentinel-2 image resolutions (NDSI: 20m; RGB: 30m)
+- Cloud cover in Sentinel-2 imagery forced our period of interest
+- Lack of widespread snow depth data
+- Lack of data for snow contribution to streamflow and groundwater
+- Conservative trail map buffering that didn't account for surrounding slopes
+
+**Future Directions:**
+- Expand analysis to non-park areas on the Olympic Peninsula
+- Correlate snow extent contribution to streamflow without glacial influence and a longer data set
+- Relate temperature trends to snowpack extent to allow for predictions of summer snow extent
+- In depth analysis of snow extent in relation to trails:
+    - Buffering the trails with relation slope
+    - Add river proximity to trail buffer 
 
 **References:** Includes dataset formatted references.
 - Microsoft Planetary Computer. Planetary Computer. (n.d.). https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a 
